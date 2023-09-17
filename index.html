@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [38.16, -96.96],
+              zoom: 4
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 4,
+               minZoom: 4
+            }).addTo(map);
+
+          var airplaneIcon = L.icon({
+              iconUrl: 'airplane.png', // url that links to the icon image file
+              iconSize:     [38, 38], // size of the icon image in pixels
+              iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+              popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+          });
+
+          var marker1 = L.marker([39.2846774,-76.7028975], {icon: airplaneIcon}).addTo(map);
+          var marker2 = L.marker([34.020479,-118.4117325], {icon: airplaneIcon}).addTo(map);
+		var marker3 = L.marker([28.4810738,-81.5074752], {icon: airplaneIcon}).addTo(map);
+		var marker4 = L.marker([42.314232,-71.1350915], {icon: airplaneIcon}).addTo(map);
+		var marker5 = L.marker([29.8167688,-95.7309411], {icon: airplaneIcon}).addTo(map);
+		var marker6 = L.marker([30.3076576,-97.9205522], {icon: airplaneIcon}).addTo(map);
+		var marker7 = L.marker([39.7642224,-105.0199195], {icon: airplaneIcon}).addTo(map);
+		var marker8 = L.marker([36.1861886,-87.1148904], {icon: airplaneIcon}).addTo(map);
+		var marker9 = L.marker([43.0577732,-88.1323037], {icon: airplaneIcon}).addTo(map);
+		
+         
+		 var pic1 = '<img src=https://upload.wikimedia.org/wikipedia/commons/2/2a/Bmoreharbor.JPG alt="BMH" width="250">';
+          var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Los_Angeles_with_Mount_Baldy.jpg" alt="LAC" width="250">';
+		  var pic3 = '<img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Lake_Eola_Park_in_Orlando_02.jpg" alt="ORD" width="250">';
+		  var pic4 = '<img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Boston_Financial_District_skyline.jpg" alt="BOS" width="250">';
+		  var pic5 = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Texas_medical_center.jpg" alt="HOU" width="250">';
+		  var pic6 = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/06/AustinSkylineLouNeffPoint-2010-03-29-b.JPG" alt="AUS" width="250">';
+		  var pic7 = '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Denver_skyline.jpg" alt="COL" width="250">';
+		  var pic8 = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Nashville_skyline_from_Fort_Negley_2018.jpg" alt="NAS" width="250">';
+		  var pic9 = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Milwaukee_Skyline_2023.jpg" alt="MIL" width="250">';
+
+          marker1.bindPopup('<p style="color:blue; font-weight:bold"> Visited Baltimore, MD  </p>' + pic1);
+          marker2.bindPopup('<p style="color:blue; font-weight:bold"> Visited Los Angeles, CA</p>' + pic2);
+		   marker3.bindPopup('<p style="color:blue; font-weight:bold"> Visited Orlando, FL</p>' + pic3);
+		   marker4.bindPopup('<p style="color:blue; font-weight:bold"> Visited Boston, MA</p>' + pic4);
+		    marker5.bindPopup('<p style="color:blue; font-weight:bold"> Visited Houston, TX</p>' + pic5);
+			 marker6.bindPopup('<p style="color:blue; font-weight:bold"> Visited Austin, TX</p>' + pic6);
+			 marker7.bindPopup('<p style="color:blue; font-weight:bold"> Visited Denver, CO</p>' + pic7);
+			marker8.bindPopup('<p style="color:blue; font-weight:bold"> Visited Nashville, TN</p>' + pic8);
+			marker9.bindPopup('<p style="color:blue; font-weight:bold"> Visited Milwaukee, WI</p>' + pic9);
+
+        </script>
+   </body>
+</html>
